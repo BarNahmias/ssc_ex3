@@ -18,7 +18,7 @@ int genatrichar(char c){
     if((c>='A')&(c<='Z')){
         genatrichar=c+A;
     }
-    if((c>='a')&(c<='z')){
+    else if((c>='a')&(c<='z')){
         genatrichar=c+a;
     }
     else{
@@ -38,7 +38,7 @@ int culc( char str []){
 }
 
 
-
+    
 void function1 (char a[],char b []){
     int sum=culc(a);
     int size = strlen(b);
@@ -47,6 +47,9 @@ void function1 (char a[],char b []){
 
 
     for(int i=0;i<size;i++ ){
+        if(genatrichar(b[i])==0){
+            continue;
+        }
          c[0]=b[i];
          
          int mc=1;
@@ -55,7 +58,16 @@ void function1 (char a[],char b []){
          int m=0;
             
          for(int j = i+1 ;j<=size;j++){
-             m++;
+
+            if(ans==sum){
+            c[mc]=b[j];
+            // m++;
+            if(h>0){printf("~");}
+            h++; 
+            for(int t=0;t<=m;t++){
+            putchar(c[t]);}
+            break;}
+            
             int va=genatrichar(b[j]);
 
             if(ans+va>sum){
@@ -64,10 +76,13 @@ void function1 (char a[],char b []){
             if(ans+va<=sum){
             ans=ans+va;
             c[mc]=b[j];
-            mc++;}
+            mc++;
+            m++;
+            }
             
             if(ans==sum){
             c[mc]=b[j];
+            // m++;
             if(h>0){printf("~");}
             h++; 
             for(int t=0;t<=m;t++){
@@ -79,7 +94,7 @@ void function1 (char a[],char b []){
 
          }
      }
-    
+
 
 int ifcharin (char c, char str[]){
   int j=strlen(str);
@@ -130,7 +145,6 @@ char* ret_atbash (char word []){
         }
     }
     char* atbs_ptr=atbashWord;
-    // printf("%s",atbashWord);
     return atbs_ptr;
 }
 
@@ -241,7 +255,7 @@ void function3 (char a[], char b[]){
       if(flag!=0){     
          if(h>0){printf("~");}
           h++;
-     for (int t = 0; t <= p ; t++){
+     for (int t = 0; t < p ; t++){
           putchar (ans[t] );}
           p=0;
           zero(c,lenword);
