@@ -130,6 +130,7 @@ char* ret_atbash (char word []){
         }
     }
     char* atbs_ptr=atbashWord;
+    // printf("%s",atbashWord);
     return atbs_ptr;
 }
 
