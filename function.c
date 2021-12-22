@@ -117,6 +117,96 @@ int doune(int a [],int len){
         return flag;
 }
 
+char* ret_atbash (char word []){
+    char atbashWord [strlen (word)];
+    for (int i = 0; i < strlen (word); i++){
+        if (word [i] >= 'a' && word [i] <= 'z'){
+            int atbashChar = 'z' - (int)(word[i]) + 'a';
+            atbashWord [i] = (char)(atbashChar);
+        }
+        else if (word [i] >= 'A' && word [i] <= 'Z'){
+            int atbashChar = 'Z' - (int)(word[i]) + 'A';
+            atbashWord [i] = (char)(atbashChar);
+        }
+    }
+    char* atbs_ptr=atbashWord;
+    return atbs_ptr;
+}
+
+    void function2 (char word [], char txt []){
+    int txtLen = strlen (txt);
+    int wordLen = strlen (word);
+    char* atBash = ret_atbash (word);
+    int counter = 0;
+    for (int i = 0;i<txtLen; i++){
+        
+        if (genatrichar (txt [i]) != 0 ){
+                      //  printf ("%d", counter);      
+                 if (txt [i] == atBash[0]){
+               int ans = 1;
+                int  j,k;
+                for (j=i, k =0; k <wordLen; j++){
+                   if(!isspace(txt[j]))
+                 {   
+                    if (txt [j] != atBash [k] ){
+                        ans = 0;
+                        break;
+                        
+                    }
+                    
+                    k++;
+                  }
+                 
+                }
+                if (ans==1)
+                    {
+                       //printf ("%d", counter); 
+                if (counter != 0){
+                    printf("~");
+                    
+                }
+               
+               for (int m = i; m < j; m++){
+                   
+                   printf ("%c", txt [m]);
+                    
+               }
+                counter++;
+            }
+            }
+            if (txt [i] == atBash [strlen(atBash)-1]){
+              
+              int ans = 1;
+                int p,c;
+                for (p = i, c = wordLen-1; c>=0; p++){
+                    if(!isspace(txt[p]))
+                    {
+                    if (txt [p] != atBash [c]){
+                        ans = 0;
+                        break;
+                    }
+                      c--;
+                    }
+                }
+                if (ans == 1)
+                   {
+                if (counter!= 0){
+                   
+                    printf("~");
+                    
+                }
+                for (int t = i; t <p; t++){
+                   
+                    printf ("%c", txt [t]);
+                }
+                counter++;
+                   }
+                
+            }
+        }
+    } 
+}
+
 
 
 void function3 (char a[], char b[]){

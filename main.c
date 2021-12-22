@@ -26,9 +26,13 @@ scanf(" %c",&ch);
 txt[i]=ch;
 i++;}
 
-
+    printf("Gematria Sequences:");
     function1(word,txt);
-    // function2(word,txt);
+    printf("\n");
+    printf("Atbash Sequences :");
+    function2(word,txt);
+    printf("\n");
+    printf("Anagram Sequences:");
     function3(word,txt);
 
     
