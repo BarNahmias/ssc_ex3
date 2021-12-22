@@ -21,6 +21,9 @@ int genatrichar(char c){
     else if((c>='a')&(c<='z')){
         genatrichar=c+a;
     }
+    else if (c==' '){
+        genatrichar=0;
+    }
     else{
         genatrichar=0;
     }
