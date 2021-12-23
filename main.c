@@ -22,7 +22,7 @@ scanf("%s", word);
 int i=0;
 // printf("enter your text: ");
 while( ch!='~'){
-scanf(" %c",&ch);
+ch = getchar();
 txt[i]=ch;
 i++;}
 
@@ -34,6 +34,16 @@ i++;}
     printf("\n");
     printf("Anagram Sequences: ");
     function3(word,txt);
+
+    // char p;
+
+    // scanf(" %c",& p);
+
+    // printf("*");
+    // putchar(p);
+    // printf("*");
+
+
 
     
     return 0;

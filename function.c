@@ -64,12 +64,12 @@ void function1 (char a[],char b []){
 
             if(ans==sum){
             c[mc]=b[j];
-            // m++;
             if(h>0){printf("~");}
             h++; 
             for(int t=0;t<=m;t++){
             putchar(c[t]);}
             break;}
+            
             
             int va=genatrichar(b[j]);
 
@@ -77,6 +77,7 @@ void function1 (char a[],char b []){
             break;}
             
             if(ans+va<=sum){
+
             ans=ans+va;
             c[mc]=b[j];
             mc++;
@@ -85,7 +86,6 @@ void function1 (char a[],char b []){
             
             if(ans==sum){
             c[mc]=b[j];
-            // m++;
             if(h>0){printf("~");}
             h++; 
             for(int t=0;t<=m;t++){
@@ -242,10 +242,10 @@ void function3 (char a[], char b[]){
  int h = 0;
 		 
   for (int i = 0; i < lentext; i++) {
-      if (b[i] == ' '){
-	  ans[p] = b[i];
-	  p++;}
-    else if (ifcharin (b[i], a)== 1){
+    //   if (b[i] == ' '){
+	//   ans[p] = b[i];
+	//   p++;}
+     if (ifcharin (b[i], a)== 1){
 
       int m=charin (b[i], a);
 
