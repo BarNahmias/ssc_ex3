@@ -99,15 +99,19 @@ void function1 (char a[],char b []){
      }
 
 
+
 int ifcharin (char c, char str[]){
   int j=strlen(str);
   int flag = 0;
   for (int i = 0; i < j; i++){
       if (c == str[i]){
-	  flag = 1;}
+	  flag = 1;
+}
       }
   return flag;
 }
+
+
 
 int charin (char c, char str[]){
   int flag;
@@ -120,20 +124,6 @@ int charin (char c, char str[]){
 }
 
 
-void zero(int c[],int len){
-   for (int j = 0; j < len; j++) {
-        (c[j]=0);}
-}
-
-
-int doune(int a [],int len){
-    int flag=-1;
-    for (int j = 0; j < len; j++) {
-        if(a[j]==0){
-            flag=0;}
-        }
-        return flag;
-}
 
 char* ret_atbash (char word []){
     char atbashWord [strlen (word)];
@@ -226,6 +216,57 @@ char* ret_atbash (char word []){
 }
 
 
+int check(int i, int str[]){
+  int flag=0;
+      if (str[i] == -1)	{
+	  flag = 1;
+	  	}
+	  return flag;
+}
+
+
+int ifcharinz (char c, char str[],int z[]){
+  int j=strlen(str);
+  int flag = 0;
+  for (int i = 0; i < j; i++){
+      int p=check(i,z);
+    if ((c == str[i])&(p==0)){
+	  flag = 1;
+}
+      }
+  return flag;
+}
+
+
+
+int charinz (char c, char str[] ,int z []){
+  int flag;
+   int j=strlen(str);
+  for (int i = 0; i < j; i++){
+            int p=check(i,z);
+      if ((c == str[i])&(p==0))	{
+	  flag = i;
+	  	}
+	  }return flag;
+}
+
+
+void zero(int c[],int len){
+   for (int j = 0; j < len; j++) {
+        (c[j]=0);}
+}
+
+
+int doune(int a [],int len){
+    int flag=-1;
+    for (int j = 0; j < len; j++) {
+        if(a[j]==0){
+            flag=0;}
+        }
+        return flag;
+}
+
+
 
 void function3 (char a[], char b[]){
 
@@ -245,9 +286,9 @@ void function3 (char a[], char b[]){
     //   if (b[i] == ' '){
 	//   ans[p] = b[i];
 	//   p++;}
-     if (ifcharin (b[i], a)== 1){
+     if (ifcharinz (b[i], a ,c )== 1){
 
-      int m=charin (b[i], a);
+      int m=charinz (b[i], a, c);
 
       if(c[m]==0){
       ans[p] = b[i];
